@@ -55,7 +55,7 @@ Map.addLayer(savi, saviParams, 'SAVI image');
 /* Mapping an index over a collection. */
 /* Define a function that produces index */
 var indices =  function (image){
-  image = image.select(['B5','B4','B2'],['nir','red','blue']);
+  image = image.select(['SR_B5','SR_B4','SR_B2'],['nir','red','blue']);
   var evi = image.expression(
       '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
         'NIR': image.select('nir'),
